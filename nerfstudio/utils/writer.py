@@ -269,7 +269,7 @@ class Writer:
             step: the time step to log
         """
         for key, scalar in scalar_dict.items():
-            self.write_scalar(name + "/" + key, float(scalar), step)
+            self.write_scalar(name + "/" + key, float(scalar.detach()), step)
 
 
 class TimeWriter:
