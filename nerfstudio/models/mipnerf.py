@@ -83,7 +83,7 @@ class MipNerfModel(Model):
         self.rgb_loss = MSELoss()
 
         # metrics
-        from torchmetrics.functional import structural_similarity_index_measure
+        from torchmetrics.functional.image import structural_similarity_index_measure
         from torchmetrics.image import PeakSignalNoiseRatio
         from torchmetrics.image.lpip import LearnedPerceptualImagePatchSimilarity
 

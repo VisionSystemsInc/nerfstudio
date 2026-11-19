@@ -153,7 +153,7 @@ class SurfaceModel(Model):
         self.depth_loss = ScaleAndShiftInvariantLoss(alpha=0.5, scales=1)
 
         # metrics
-        from torchmetrics.functional import structural_similarity_index_measure
+        from torchmetrics.functional.image import structural_similarity_index_measure
         from torchmetrics.image import PeakSignalNoiseRatio
         from torchmetrics.image.lpip import LearnedPerceptualImagePatchSimilarity
 

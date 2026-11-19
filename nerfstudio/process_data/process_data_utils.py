@@ -202,7 +202,7 @@ def convert_video_to_images(
         if random_seed:
             random.seed(random_seed)
             frame_indices = sorted(random.sample(range(num_frames), num_frames_target))
-            select_cmd = "select='" + "+".join([f"eq(n\,{idx})" for idx in frame_indices]) + "',setpts=N/TB,"
+            select_cmd = "select='" + "+".join([rf"eq(n\,{idx})" for idx in frame_indices]) + "',setpts=N/TB,"
             CONSOLE.print(f"Extracting {num_frames_target} frames using seed {random_seed} random selection.")
         elif spacing > 1:
             CONSOLE.print(f"Extracting {math.ceil(num_frames / spacing)} frames in evenly spaced intervals")
